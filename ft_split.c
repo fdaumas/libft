@@ -6,7 +6,7 @@
 /*   By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:28:35 by fdaumas           #+#    #+#             */
-/*   Updated: 2021/11/15 14:52:37 by fdaumas          ###   ########.fr       */
+/*   Updated: 2021/11/15 16:40:41 by fdaumas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strdupmod(char const *src, char c, int depart)
 	char	*dup;
 
 	index = 0;
-	while (src[index + depart] != c && src[index + depart])
+	while ((src[index + depart] != c && src[index + depart]))
 		index++;
 	dup = malloc(sizeof(char) * (index + 1));
 	if (dup == NULL)
@@ -71,27 +71,27 @@ int	word_count(char const *str, char c)
 char	**ft_split(char const *str, char c)
 {
 	char	**tab;
-	int		index;
-	int		index_dup;
+	int		index[2];
 
-	index_dup = 0;
-	index = 0;
+	index[1] = 0;
+	index[0] = 0;
 	if (!str)
 		return (0);
 	tab = malloc (sizeof(char *) * (word_count(str, c) + 1));
 	if (tab == NULL)
 		return (NULL);
-	while (str[index])
+	while (str[index[0]])
 	{
-		while (str[index] == c && str[index])
-			index++;
-		if (str[index])
-			tab[index_dup] = ft_strdupmod(str, c, index);
-		if (!tab[index_dup])
-			return (free_all(index_dup, tab));
-		index_dup++;
-		while (str[index] != c && str[index])
-			index++;
+		while (str[index[0]] == c && str[index[0]])
+			index[0]++;
+		if (!str[index[0]])
+			break ;
+		tab[index[1]] = ft_strdupmod(str, c, index[0]);
+		if (!tab[index[1]])
+			return (free_all(index[1]++, tab));
+		index[1]++;
+		while (str[index[0]] != c && str[index[0]])
+			index[0]++;
 	}
 	tab[word_count(str, c)] = NULL;
 	return (tab);
