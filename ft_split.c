@@ -6,7 +6,7 @@
 /*   By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:28:35 by fdaumas           #+#    #+#             */
-/*   Updated: 2021/11/10 17:47:13 by fdaumas          ###   ########.fr       */
+/*   Updated: 2021/11/15 14:22:59 by fdaumas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*free_all(int i, char **tab)
 	int	index;
 
 	index = 0;
-	while (index <= i)
+	while (index < i)
 		free(tab[index++]);
 	free(tab);
 	return (NULL);
@@ -85,7 +85,8 @@ char	**ft_split(char const *str, char c)
 	{
 		while (str[index] == c && str[index])
 			index++;
-		tab[index_dup] = ft_strdupmod(str, c, index);
+		if (str[index])
+			tab[index_dup] = ft_strdupmod(str, c, index);
 		if (!tab[index_dup])
 			return (free_all(index_dup, tab));
 		index_dup++;
