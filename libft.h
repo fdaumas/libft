@@ -6,7 +6,7 @@
 /*   By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 23:57:51 by fdaumas           #+#    #+#             */
-/*   Updated: 2021/11/10 17:49:34 by fdaumas          ###   ########.fr       */
+/*   Updated: 2021/11/16 01:17:59 by fdaumas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
 char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
 #endif
