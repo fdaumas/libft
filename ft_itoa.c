@@ -6,21 +6,11 @@
 /*   By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:16:05 by fdaumas           #+#    #+#             */
-/*   Updated: 2021/11/16 20:41:24 by fdaumas          ###   ########.fr       */
+/*   Updated: 2021/11/16 21:44:38 by fdaumas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *str)
-{
-	int	index;
-
-	index = 0 ;
-	while (str[index] != '\0')
-		index++;
-	return (index);
-}
 
 char	*reverse(char *tmp)
 {
