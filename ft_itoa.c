@@ -6,7 +6,7 @@
 /*   By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:16:05 by fdaumas           #+#    #+#             */
-/*   Updated: 2021/11/18 22:43:57 by fdaumas          ###   ########.fr       */
+/*   Updated: 2021/11/18 23:44:11 by fdaumas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ char	*ft_itoa(int n)
 	return (new);
 }
 
-int main()
+int	main(void)
 {
-	char *test;
+	char	*test;
 
 	test = ft_itoa(-2147483648);
 	printf("%s\n", test);
