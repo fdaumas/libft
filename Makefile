@@ -6,7 +6,7 @@
 #    By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 23:41:04 by fdaumas           #+#    #+#              #
-#    Updated: 2021/11/16 22:26:02 by fdaumas          ###   ########.fr        #
+#    Updated: 2021/11/19 12:44:12 by fdaumas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,11 @@ SRCS	= 	ft_isalnum.c\
 			ft_strtrim.c\
 			ft_itoa.c\
 			ft_striteri.c\
-			ft_strmapi.c
+			ft_strmapi.c\
+			ft_putchar_fd.c\
+			ft_putstr_fd.c\
+			ft_putendl_fd.c\
+			ft_putnbr_fd.c
 OBJS	= ${SRCS:.c=.o}
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror

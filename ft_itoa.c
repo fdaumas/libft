@@ -6,7 +6,7 @@
 /*   By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:16:05 by fdaumas           #+#    #+#             */
-/*   Updated: 2021/11/19 02:30:33 by fdaumas          ###   ########.fr       */
+/*   Updated: 2021/11/19 11:12:22 by fdaumas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ size_t	nbr(char *new, long long nb)
 	int		unit;
 	size_t	index;
 
+	index = 0;
 	while (nb / 10 > 0)
 	{
 		unit = nb % 10;
@@ -30,7 +31,7 @@ size_t	nbr(char *new, long long nb)
 void	reverse(char *new)
 {
 	char	tmp;
-	int		len;
+	size_t	len;
 	size_t	index;
 
 	len = ft_strlen(new);
@@ -51,6 +52,17 @@ char	*expet(char *new)
 	return (new);
 }
 
+size_t	negatif(long long nb, char *new)
+{
+	size_t	index;
+
+	nb = nb * -1;
+	index = nbr(&new[1], nb);
+	new[0] = '-';
+	index++;
+	return (index);
+}
+
 char	*ft_itoa(int n)
 {
 	char		*new;
@@ -63,11 +75,7 @@ char	*ft_itoa(int n)
 	index = 0;
 	nb = n;
 	if (n < 0)
-	{
-		nb = nb * -1;
-		index = nbr(&new[1], nb);
-		new[0] = '-';
-	}
+		index = negatif(nb, new);
 	else if (nb == 0)
 		return (expet(new));
 	else
@@ -78,13 +86,4 @@ char	*ft_itoa(int n)
 	else
 		reverse(new);
 	return (new);
-}
-
-int	main(void)
-{
-	char	*test;
-
-	test = ft_itoa(0);
-	printf("%s\n", test);
-	free(test);
 }

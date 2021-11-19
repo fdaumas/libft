@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 22:26:17 by fdaumas           #+#    #+#             */
-/*   Updated: 2021/11/19 12:13:35 by fdaumas          ###   ########.fr       */
+/*   Created: 2021/11/19 12:37:05 by fdaumas           #+#    #+#             */
+/*   Updated: 2021/11/19 12:48:43 by fdaumas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	split(int n, int fd)
 {
-	unsigned int	index;
-	char			*mapi;
+	char	c;
 
-	if (!s || !f)
-		return (NULL);
-	index = 0;
-	mapi = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!mapi)
-		return (NULL);
-	while (s[index])
+	if (n > 9)
+		split(n / 10, fd);
+	c = (n % 10) + '0';
+	write(fd, &c, 1);
+}
+
+void	inverse(int n, int fd)
+{
+	if (n < 0)
 	{
-		mapi[index] = f(index, s[index]);
-		index++;
+		write(fd, "-", 1);
+		n = -n;
 	}
-	mapi[index] = '\0';
-	return (mapi);
+	split(n, fd);
+}
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+	}
+	else
+		inverse(n, fd);
 }
