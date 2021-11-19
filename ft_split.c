@@ -6,13 +6,13 @@
 /*   By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:28:35 by fdaumas           #+#    #+#             */
-/*   Updated: 2021/11/19 15:50:06 by fdaumas          ###   ########.fr       */
+/*   Updated: 2021/11/19 20:53:06 by fdaumas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*free_all(int i, char **tab)
+static void	*free_all(int i, char **tab)
 {
 	int	index;
 
@@ -23,7 +23,7 @@ void	*free_all(int i, char **tab)
 	return (NULL);
 }
 
-char	*ft_strdupmod(char const *src, char c, int depart)
+static char	*ft_strdupmod(char const *src, char c, int depart)
 {
 	int		index;
 	char	*dup;
@@ -44,7 +44,7 @@ char	*ft_strdupmod(char const *src, char c, int depart)
 	return (dup);
 }
 
-int	word_count(char const *str, char c)
+static int	word_count(char const *str, char c)
 {
 	int	index;
 	int	cpt;

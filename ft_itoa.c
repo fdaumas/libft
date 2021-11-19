@@ -6,13 +6,13 @@
 /*   By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 17:16:05 by fdaumas           #+#    #+#             */
-/*   Updated: 2021/11/19 11:12:22 by fdaumas          ###   ########.fr       */
+/*   Updated: 2021/11/19 20:48:33 by fdaumas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	nbr(char *new, long long nb)
+static size_t	nbr(char *new, long long nb)
 {
 	int		unit;
 	size_t	index;
@@ -28,7 +28,7 @@ size_t	nbr(char *new, long long nb)
 	return (index);
 }
 
-void	reverse(char *new)
+static void	reverse(char *new)
 {
 	char	tmp;
 	size_t	len;
@@ -45,14 +45,14 @@ void	reverse(char *new)
 	}
 }
 
-char	*expet(char *new)
+static char	*expet(char *new)
 {
 	new[0] = '0';
 	new[1] = '\0';
 	return (new);
 }
 
-size_t	negatif(long long nb, char *new)
+static size_t	negatif(long long nb, char *new)
 {
 	size_t	index;
 

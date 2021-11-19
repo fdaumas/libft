@@ -6,13 +6,13 @@
 /*   By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:49:36 by fdaumas           #+#    #+#             */
-/*   Updated: 2021/11/16 01:56:59 by fdaumas          ###   ########.fr       */
+/*   Updated: 2021/11/19 20:56:58 by fdaumas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_set(char const c, char const *set)
+static int	is_set(char const c, char const *set)
 {
 	size_t	index;
 
@@ -26,7 +26,7 @@ int	is_set(char const c, char const *set)
 	return (0);
 }
 
-int	nb_char(char const *s1, char const *set)
+static int	nb_char(char const *s1, char const *set)
 {
 	int	index;
 	int	nb;

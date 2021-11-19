@@ -6,13 +6,13 @@
 /*   By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 12:37:05 by fdaumas           #+#    #+#             */
-/*   Updated: 2021/11/19 12:48:43 by fdaumas          ###   ########.fr       */
+/*   Updated: 2021/11/19 20:52:26 by fdaumas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	split(int n, int fd)
+static void	split(int n, int fd)
 {
 	char	c;
 
@@ -22,7 +22,7 @@ void	split(int n, int fd)
 	write(fd, &c, 1);
 }
 
-void	inverse(int n, int fd)
+static void	inverse(int n, int fd)
 {
 	if (n < 0)
 	{
