@@ -6,7 +6,7 @@
 /*   By: fdaumas <fdaumas@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:28:35 by fdaumas           #+#    #+#             */
-/*   Updated: 2021/11/19 20:53:06 by fdaumas          ###   ########.fr       */
+/*   Updated: 2021/11/21 14:41:03 by fdaumas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,21 @@ static void	*free_all(int i, char **tab)
 	return (NULL);
 }
 
-static char	*ft_strdupmod(char const *src, char c, int depart)
+static char	*ft_strdupmod(char const *src, char c, int start)
 {
 	int		index;
 	char	*dup;
 
 	index = 0;
-	while ((src[index + depart] != c && src[index + depart]))
+	while ((src[index + start] != c && src[index + start]))
 		index++;
 	dup = malloc(sizeof(char) * (index + 1));
 	if (dup == NULL)
 		return (NULL);
 	index = 0;
-	while (src[index + depart] != c && src[index + depart])
+	while (src[index + start] != c && src[index + start])
 	{
-		dup[index] = src[index + depart];
+		dup[index] = src[index + start];
 		index++;
 	}
 	dup[index] = '\0';
