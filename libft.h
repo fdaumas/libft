@@ -25,13 +25,15 @@ typedef struct s_list
 //function working on the character
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+//function working on the character
+//
 //character checking function
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-//function working on the character
+//character checking function
 //
 //function working on the memory
 void	*ft_memset(void *b, int c, size_t len);
