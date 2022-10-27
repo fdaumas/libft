@@ -16,6 +16,8 @@ static int	is_set(char const c, char const *set)
 {
 	size_t	index;
 
+	if (!c || !set)
+		return (0);
 	index = 0;
 	while (set[index])
 	{
