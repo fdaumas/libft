@@ -17,6 +17,8 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	index;
 	size_t	meter;
 
+	if (!s)
+		return (NULL);
 	index = 0;
 	meter = 0;
 	while (s[index] != '\0')
