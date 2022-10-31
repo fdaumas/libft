@@ -83,6 +83,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 //converting function
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
+char	*ft_itoa_base(int digit, int length, char *base, char *str);
 //converting function
 void	*ft_calloc(size_t count, size_t size);
 //converting function
